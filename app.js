@@ -3,8 +3,8 @@ import App from './App.vue'
 import { createRouter } from './router'
 
 // global-component-start
-Vue.component('ybutton-id', () => import('@/components/button/index.vue'))
-Vue.component('ytext-id', () => import('@/components/text/index.vue'))
+Vue.component('ybutton', () => import('@/components/button/index.vue'))
+Vue.component('ytext', () => import('@/components/text/index.vue'))
 // global-component-end
 
 export function createApp () {
