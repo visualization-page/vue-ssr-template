@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <render
-      :components="components"
+    <component
+      v-for="item in components"
+      :key="item.id"
+      :is="item.name"
+      :data-id="item.id"
+      :config="item.props"
     />
   </div>
 </template>
@@ -11,11 +15,11 @@
   const components = []
   // inject-end
 
-  import render from './render'
+  // import render from './render'
   export default {
     name: 'index',
     components: {
-      render
+      // render
     },
     data () {
       return {
