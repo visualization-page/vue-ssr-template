@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 14:
+/***/ 53:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=template&id=7f7fa09b&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('p',[_vm._v(_vm._s(_vm.config.text))])}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=template&id=f87a67e4&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('p',[_vm._v(_vm._s(_vm.text))])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=template&id=7f7fa09b&
+// CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=template&id=f87a67e4&
 
 // CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.4@babel-loader/lib!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=script&lang=js&
 //
@@ -23,7 +23,7 @@ var staticRenderFns = []
   name: 'ytext',
 
   props: {
-    config: Object
+    text: String
   }
 });
 // CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=script&lang=js&

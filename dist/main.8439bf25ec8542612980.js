@@ -80,7 +80,7 @@ function createRouter() {
       path: '/',
       name: 'index',
       component: function component() {
-        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 12));
+        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 51));
       }
       // component: require('./src/views/Index.vue')
     }]
@@ -92,15 +92,16 @@ function createRouter() {
 
 
 // global-component-start
-vue_runtime_esm["a" /* default */].component('ybutton-undefined', function () {
-  return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 13));
-});
-vue_runtime_esm["a" /* default */].component('ytext-undefined', function () {
-  return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 14));
-});
-// global-component-end
+vue_runtime_esm["a" /* default */].prototype.$all = {
+  'ybutton': function ybutton() {
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 52));
+  },
+  'ytext': function ytext() {
+    return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 53));
+  }
+  // global-component-end
 
-function createApp() {
+};function createApp() {
   var router = createRouter();
   var app = new vue_runtime_esm["a" /* default */]({
     render: function render(h) {

@@ -1,5 +1,5 @@
 <template>
-  <p>{{ config.text }}</p>
+  <p>{{ text }}</p>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
   name: 'ybutton',
 
   props: {
-    config: Object
+    text: String
   }
 }
 </script>
