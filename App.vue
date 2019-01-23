@@ -10,3 +10,12 @@ export default {
 }
 </script>
 
+<style>
+body {
+  margin: 0
+}
+div {
+  box-sizing: border-box;
+}
+</style>
+
