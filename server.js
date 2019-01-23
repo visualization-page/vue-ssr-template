@@ -11,8 +11,8 @@ const componentsScript = `<script type="text/javascript">
   </script>`
 
 const context = {
-  title: 'hello',
-  meta: `<meta name="viewport" content="width=device-width">`,
+  title: '',
+  meta: `<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">`,
   url: '/',
   renderComponents() {
     return componentsScript
