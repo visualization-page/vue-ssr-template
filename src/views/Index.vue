@@ -2,7 +2,6 @@
   <div class="home">
     <render
       :components="components"
-      :import-list="importList"
     />
   </div>
 </template>
@@ -20,7 +19,7 @@
     },
     data () {
       return {
-        components,
+        components: require('@@/site-config.json').components,
         importList
       }
     },

@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([4],{
 
 /***/ 2:
 /***/ (function(module, exports) {
@@ -80,7 +80,7 @@ function createRouter() {
       path: '/',
       name: 'index',
       component: function component() {
-        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 55));
+        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 56));
       }
       // component: require('./src/views/Index.vue')
     }]
@@ -90,6 +90,15 @@ function createRouter() {
 
 
 
+
+// global-component-start
+vue_runtime_esm["a" /* default */].component('ybutton-id', function () {
+  return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 57));
+});
+vue_runtime_esm["a" /* default */].component('ytext-id', function () {
+  return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 58));
+});
+// global-component-end
 
 function createApp() {
   var router = createRouter();
