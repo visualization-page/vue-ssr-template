@@ -9,7 +9,7 @@
 
 <script>
   // inject-start
-  // const components = []
+  const components = []
   // inject-end
 
   import render from './render'
@@ -22,16 +22,15 @@
 
     data () {
       return {
-        components: []
+        components
       }
-    },
-
-    created () {
     },
 
     mounted () {
       // 在build时，应该将组件数据直接注入打包
-      this.components = window.INIT_DATA
+      if (components.length === 0) {
+        this.components = window.INIT_DATA
+      }
     }
   }
 </script>
