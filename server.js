@@ -7,8 +7,10 @@ const clientManifest = require('./dist/vue-ssr-client-manifest.json')
 const template = fs.readFileSync('./index.template.html', 'utf-8')
 const componentsConfig = require('./site-config')
 const componentsScript = `<script type="text/javascript">
-  window.INIT_DATA = ${JSON.stringify(componentsConfig.components)}
-  </script>`
+  // global-data-start  
+  window.INIT_DATA = ${JSON.stringify(componentsConfig.components)}  
+  // global-data-end
+</script>`
 
 const context = {
   title: '',
