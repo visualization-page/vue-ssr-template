@@ -3,6 +3,8 @@ const nodeExternals = require('webpack-node-externals')
 const baseConfig = require('./webpack.base.config.js')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 const webpack = require('webpack')
+const isPreview = process.env.BUILD === 'preview'
+const path = require('path')
 
 module.exports = merge(baseConfig, {
   // 将 entry 指向应用程序的 server entry 文件
@@ -19,7 +21,8 @@ module.exports = merge(baseConfig, {
   // 此处告知 server bundle 使用 Node 风格导出模块(Node-style exports)
   output: {
     libraryTarget: 'commonjs2',
-    filename: 'server-bundle.js'
+    filename: 'server-bundle.js',
+    path: path.resolve(__dirname, isPreview ? '../dist' : '../release')
   },
 
   // https://webpack.js.org/configuration/externals/#function

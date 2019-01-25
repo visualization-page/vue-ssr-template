@@ -608,12 +608,12 @@ module.exports = function (it) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/views/Index.vue?vue&type=template&id=5a93a99e&
-var Indexvue_type_template_id_5a93a99e__render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('render',{attrs:{"components":_vm.components,"import-list":_vm.$all}})],1)}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/views/Index.vue?vue&type=template&id=e7371660&
+var Indexvue_type_template_id_e7371660__render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('render',{attrs:{"components":_vm.components,"import-list":_vm.$all}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/Index.vue?vue&type=template&id=5a93a99e&
+// CONCATENATED MODULE: ./src/views/Index.vue?vue&type=template&id=e7371660&
 
 // EXTERNAL MODULE: ./node_modules/_babel-runtime@6.26.0@babel-runtime/helpers/extends.js
 var helpers_extends = __webpack_require__(22);
@@ -664,7 +664,7 @@ var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 //
 
 // inject-start
-// const components = []
+var components = [];
 // inject-end
 
 
@@ -677,13 +677,14 @@ var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
   data: function data() {
     return {
-      components: []
+      components: components
     };
   },
-  created: function created() {},
   mounted: function mounted() {
     // 在build时，应该将组件数据直接注入打包
-    this.components = window.INIT_DATA;
+    if (components.length === 0) {
+      this.components = window.INIT_DATA;
+    }
   }
 });
 // CONCATENATED MODULE: ./src/views/Index.vue?vue&type=script&lang=js&
@@ -701,7 +702,7 @@ var componentNormalizer = __webpack_require__(3);
 
 var component = Object(componentNormalizer["a" /* default */])(
   views_Indexvue_type_script_lang_js_,
-  Indexvue_type_template_id_5a93a99e__render,
+  Indexvue_type_template_id_e7371660__render,
   staticRenderFns,
   false,
   null,

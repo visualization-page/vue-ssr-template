@@ -2,11 +2,14 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base.config.js')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
+const isPreview = process.env.BUILD === 'preview'
+const path = require('path')
 
 module.exports = merge(baseConfig, {
   entry: './entry-client.js',
   output: {
-    publicPath: './'
+    publicPath: './',
+    path: path.resolve(__dirname, isPreview ? '../dist' : '../release')
   },
   plugins: [
     // strip dev-only code in Vue source

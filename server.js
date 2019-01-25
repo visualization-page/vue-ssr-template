@@ -1,23 +1,27 @@
 const fs = require('fs')
 const { createBundleRenderer } = require('vue-server-renderer')
+const isPreview = process.env.BUILD === 'preview'
+const path = require('path')
 
 // 第 1 步：创建一个 Vue 实例
-const serverBundle = require('./dist/vue-ssr-server-bundle.json')
-const clientManifest = require('./dist/vue-ssr-client-manifest.json')
+const targetDir = isPreview ? './dist' : './release'
+const serverBundle = require(`${targetDir}/vue-ssr-server-bundle.json`)
+const clientManifest = require(`${targetDir}/vue-ssr-client-manifest.json`)
 const template = fs.readFileSync('./index.template.html', 'utf-8')
 const componentsConfig = require('./site-config')
 const componentsScript = `<script type="text/javascript">
   // global-data-start  
-  window.INIT_DATA = ${JSON.stringify(componentsConfig.components)}  
+  window.INIT_DATA = ${JSON.stringify(componentsConfig.components)}
   // global-data-end
 </script>`
+const htmlTargetPath = path.resolve(__dirname, targetDir, 'index.html')
 
 const context = {
   title: '',
   meta: `<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">`,
   url: '/',
   renderComponents() {
-    return componentsScript
+    return isPreview ? componentsScript : ''
   }
 }
 
@@ -29,7 +33,7 @@ const renderer = createBundleRenderer(serverBundle, {
 })
 
 renderer.renderToString(context).then(html => {
-  fs.writeFileSync('./dist/index.html', html, 'utf-8', err => {
+  fs.writeFileSync(htmlTargetPath, html, 'utf-8', err => {
     if (err) throw err
   })
 }).catch(err => {
