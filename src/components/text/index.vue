@@ -3,11 +3,11 @@
 </template>
 
 <script>
-export default {
-  name: 'ytext',
+  export default {
+    name: 'ytext',
 
-  props: {
-    text: String
+    props: {
+      text: String
+    }
   }
-}
 </script>
