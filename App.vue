@@ -20,5 +20,8 @@ body {
 div {
   box-sizing: border-box;
 }
+#app
+  max-width: 540px
+  margin: 0 auto
 </style>
 
