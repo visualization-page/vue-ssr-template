@@ -17,7 +17,8 @@ const componentsScript = `<script type="text/javascript">
 const htmlTargetPath = path.resolve(__dirname, targetDir, 'index.html')
 
 const context = {
-  title: '',
+  title: componentsConfig.title,
+  bgColor: componentsConfig.bgColor,
   meta: `<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">`,
   url: '/',
   renderComponents() {

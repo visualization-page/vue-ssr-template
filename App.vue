@@ -11,6 +11,9 @@ export default {
 </script>
 
 <style lang="stylus">
+html {
+  min-height: 100%;
+}
 body {
   margin: 0
 }
