@@ -47,7 +47,7 @@ exports.push([module.i, ".ytext{margin-bottom:1.2em}.ytext__bold{font-weight:700
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=template&id=09ac604c&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=template&id=6e8ccdb6&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ytext"},[(_vm.subType === 2)?_c('div',{staticClass:"ytext__title",style:({
       textAlign: _vm.textAlign
     })},[_c('div',{staticClass:"ytext__title--main",class:{
@@ -63,7 +63,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=template&id=09ac604c&
+// CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=template&id=6e8ccdb6&
 
 // CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.4@babel-loader/lib!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=script&lang=js&
 //
@@ -121,13 +121,13 @@ var staticRenderFns = []
   props: {
     subType: {
       type: Number,
-      default: 1 // 1 图片+段落+图片，2 标题
+      default: 1 // 1 图片+段落，2 标题
     },
     text: {
       type: String,
       default: ''
     },
-    isTextIndent: Boolean,
+    // isTextIndent: Boolean,
     textAlign: {
       type: String,
       default: 'left'
@@ -140,7 +140,7 @@ var staticRenderFns = []
       type: Number,
       default: 14
     },
-    isBold: Boolean,
+    isBold: [Boolean, Number],
     preImg: String,
     preWidth: Number,
     preHeight: Number,

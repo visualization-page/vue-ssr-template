@@ -2,22 +2,22 @@
   "publicPath": "./",
   "all": [
     "0.c6136c40ff2ec741a968.js",
-    "1.3ab695e632e19e1e975a.js",
+    "1.d4937dff9d1e9c679f3b.js",
     "2.5f78ab7039e1394870b5.js",
     "vendor.2c6ec308340f263924af.js",
     "main.0bf97819814c770f45fe.js",
-    "manifest.7be9d593eb3c43ae859e.js",
+    "manifest.1052307487600e745921.js",
     "common.0bf97819814c770f45fe.css"
   ],
   "initial": [
-    "manifest.7be9d593eb3c43ae859e.js",
+    "manifest.1052307487600e745921.js",
     "vendor.2c6ec308340f263924af.js",
     "main.0bf97819814c770f45fe.js",
     "common.0bf97819814c770f45fe.css"
   ],
   "async": [
     "0.c6136c40ff2ec741a968.js",
-    "1.3ab695e632e19e1e975a.js",
+    "1.d4937dff9d1e9c679f3b.js",
     "2.5f78ab7039e1394870b5.js"
   ],
   "modules": {
@@ -26,6 +26,9 @@
     ],
     "51830826": [
       2
+    ],
+    "62351136": [
+      1
     ],
     "9445aa06": [
       3
@@ -200,9 +203,6 @@
     ],
     "1a911140": [
       2
-    ],
-    "f6e000f6": [
-      1
     ]
   }
 }
