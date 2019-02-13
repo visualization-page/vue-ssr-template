@@ -25,6 +25,9 @@ export default {
     return c('div', {
       'class': {
         'components': true
+      },
+      attrs: {
+        'data-id-sort': context.props.components.map(x => x.id).join(',')
       }
     }, childs)
   }

@@ -654,6 +654,11 @@ var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
     return c('div', {
       'class': {
         'components': true
+      },
+      attrs: {
+        'data-id-sort': context.props.components.map(function (x) {
+          return x.id;
+        }).join(',')
       }
     }, childs);
   }
