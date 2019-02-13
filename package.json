@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:client": "cross-env NODE_ENV=production BUILD=preview webpack --config build/build-client.js --progress --hide-modules",
-    "build:server": "cross-env NODE_ENV=production BUILD=preview webpack --config build/build-server.js --progress --hide-modules",
-    "render": "cross-env BUILD=preview node server.js",
+    "build:client": "export NODE_ENV=production && BUILD=preview && webpack --config build/build-client.js --progress --hide-modules",
+    "build:server": "export NODE_ENV=production && BUILD=preview && webpack --config build/build-server.js --progress --hide-modules",
+    "render": "export BUILD=preview && node server.js",
     "build": "rm -rf ./dist && npm run build:server && npm run build:client && npm run render",
     "build:client:release": "cross-env NODE_ENV=production BUILD=release webpack --config build/build-client.js --progress --hide-modules",
     "build:server:release": "cross-env NODE_ENV=production BUILD=release webpack --config build/build-server.js --progress --hide-modules",

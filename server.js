@@ -3,6 +3,8 @@ const { createBundleRenderer } = require('vue-server-renderer')
 const isPreview = process.env.BUILD === 'preview'
 const path = require('path')
 
+// console.log(isPreview, '======')
+
 // 第 1 步：创建一个 Vue 实例
 const targetDir = isPreview ? './dist' : './release'
 const serverBundle = require(`${targetDir}/vue-ssr-server-bundle.json`)
