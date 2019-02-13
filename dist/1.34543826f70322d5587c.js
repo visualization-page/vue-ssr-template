@@ -47,12 +47,14 @@ exports.push([module.i, ".ytext{margin-bottom:1.2em}.ytext__bold{font-weight:700
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=template&id=6e8ccdb6&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=template&id=396f6225&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ytext"},[(_vm.subType === 2)?_c('div',{staticClass:"ytext__title",style:({
       textAlign: _vm.textAlign
     })},[_c('div',{staticClass:"ytext__title--main",class:{
         'ytext__bold': _vm.isBold
-      }},[_vm._v("\n      "+_vm._s(_vm.text)+"\n    ")]),(_vm.subText)?_c('div',{staticClass:"ytext__title--sub"},[_vm._v("\n      "+_vm._s(_vm.subText)+"\n    ")]):_vm._e()]):[(_vm.preImg)?_c('div',{staticClass:"ytext__pre-img"},[_c('img',{style:({ width: (_vm.preWidth + "px"), height: (_vm.preHeight + "px") }),attrs:{"src":_vm.preImg,"alt":""}})]):_vm._e(),_c('div',{staticClass:"ytext__content",class:{
+      },style:({
+        fontSize: (_vm.fontSize + "px")
+      })},[_vm._v("\n      "+_vm._s(_vm.text)+"\n    ")]),(_vm.subText)?_c('div',{staticClass:"ytext__title--sub"},[_vm._v("\n      "+_vm._s(_vm.subText)+"\n    ")]):_vm._e()]):[(_vm.preImg)?_c('div',{staticClass:"ytext__pre-img"},[_c('img',{style:({ width: (_vm.preWidth + "px"), height: (_vm.preHeight + "px") }),attrs:{"src":_vm.preImg,"alt":""}})]):_vm._e(),_c('div',{staticClass:"ytext__content",class:{
         'ytext__content--indent': _vm.textAlign === 'left',
         'ytext__bold': _vm.isBold
       },style:({
@@ -63,9 +65,12 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=template&id=6e8ccdb6&
+// CONCATENATED MODULE: ./src/components/text/index.vue?vue&type=template&id=396f6225&
 
 // CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.4@babel-loader/lib!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/text/index.vue?vue&type=script&lang=js&
+//
+//
+//
 //
 //
 //
@@ -152,7 +157,7 @@ var staticRenderFns = []
 
   computed: {
     escapeText: function escapeText() {
-      return this.text.replace(/<([a-z\/]+)/g, '&lt;$1').replace(/([a-z]+)>/g, '$1&gt;');
+      return this.text.replace(/<([a-z\/]+)/g, '&lt;$1').replace(/([a-z]+)>/g, '$1&gt;').replace(/\n/g, '<br>');
     }
   }
 });
