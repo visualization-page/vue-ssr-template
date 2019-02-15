@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "data": [
     {
       "name": "ybutton",
@@ -10,7 +10,9 @@
         "text": "默认按钮",
         "backgroundColor": "#fff",
         "color": "#666",
-        "click": "link_"
+        "click": "link_",
+        "marginTb": 0,
+        "marginLr": 10
       },
       "schema": {
         "type": "object",
@@ -165,7 +167,7 @@
             "default": "tel_tel://123",
             "options": [
               {
-                "label": "跳转到",
+                "label": "跳转到外部",
                 "value": "link"
               },
               {
