@@ -47,14 +47,16 @@ exports.push([module.i, ".ybutton{font-size:14px;cursor:pointer;color:#666}.ybut
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/button/index.vue?vue&type=template&id=140cfeba&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/button/index.vue?vue&type=template&id=e40ca336&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ybutton",class:{
-    'ybutton-type__inline': _vm.category === 1,
-    'ybutton-type__block': _vm.category === 2,
-    'ybutton-type__fixed': _vm.category === 3,
-    'ybutton-type__fixed--bottom': _vm.category === 3 && _vm.fixedPosition === 'bottom',
-    'ybutton-type__fixed--top': _vm.category === 3 && _vm.fixedPosition === 'top'
-  },on:{"click":function($event){_vm.$emit('on-click')}}},[_c('div',{staticClass:"ybutton__wrapper",class:{
+    'ybutton-type__inline': _vm.subType === 1,
+    'ybutton-type__block': _vm.subType === 2,
+    'ybutton-type__fixed': _vm.subType === 3,
+    'ybutton-type__fixed--bottom': _vm.subType === 3 && _vm.fixedPosition === 'bottom',
+    'ybutton-type__fixed--top': _vm.subType === 3 && _vm.fixedPosition === 'top'
+  },style:({
+    margin: (_vm.subType === 1 || _vm.subType === 2) && ((_vm.marginTb || 0) + "px " + (_vm.marginLr || 10) + "px")
+  }),on:{"click":function($event){_vm.$emit('on-click')}}},[_c('div',{staticClass:"ybutton__wrapper",class:{
       'ybutton-size__large': _vm.size === 'large',
       'ybutton-size__middle': _vm.size === 'middle',
       'ybutton-size__small': _vm.size === 'small'
@@ -67,9 +69,12 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/button/index.vue?vue&type=template&id=140cfeba&
+// CONCATENATED MODULE: ./src/components/button/index.vue?vue&type=template&id=e40ca336&
 
 // CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.4@babel-loader/lib!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/button/index.vue?vue&type=script&lang=js&
+//
+//
+//
 //
 //
 //
@@ -106,10 +111,12 @@ var staticRenderFns = []
   name: 'ybutton',
 
   props: {
-    category: {
+    subType: {
       type: Number,
       default: 1 // 1 inline-block按钮，2 block按钮，3 固定按钮
     },
+    marginTb: Number,
+    marginLr: Number,
     size: {
       type: String,
       default: 'middle' // large middle small
