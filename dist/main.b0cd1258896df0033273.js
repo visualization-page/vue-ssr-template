@@ -80,9 +80,15 @@ function createRouter() {
       path: '/',
       name: 'index',
       component: function component() {
-        return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 57));
-      }
-      // component: require('./src/views/Index.vue')
+        return __webpack_require__.e/* import() */(0/* duplicate */).then(__webpack_require__.bind(null, 57));
+      },
+      children: [{
+        path: ':pageId',
+        name: 'index-child',
+        component: function component() {
+          return __webpack_require__.e/* import() */(0/* duplicate */).then(__webpack_require__.bind(null, 57));
+        }
+      }]
     }]
   });
 }

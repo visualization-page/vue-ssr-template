@@ -614,12 +614,12 @@ module.exports = function (it) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/views/Index.vue?vue&type=template&id=e7371660&
-var Indexvue_type_template_id_e7371660__render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('render',{attrs:{"components":_vm.components,"import-list":_vm.$all}})],1)}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/views/Index.vue?vue&type=template&id=0a1838ce&
+var Indexvue_type_template_id_0a1838ce__render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"home"},[_c('render',{attrs:{"components":_vm.components,"import-list":_vm.$all}})],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/views/Index.vue?vue&type=template&id=e7371660&
+// CONCATENATED MODULE: ./src/views/Index.vue?vue&type=template&id=0a1838ce&
 
 // EXTERNAL MODULE: ./node_modules/_babel-runtime@6.26.0@babel-runtime/helpers/extends.js
 var helpers_extends = __webpack_require__(24);
@@ -691,10 +691,42 @@ var components = [];
       components: components
     };
   },
+
+
+  watch: {
+    '$route.params.pageId': function $routeParamsPageId(pageId) {
+      this.renderSecond(pageId);
+    }
+  },
+
   mounted: function mounted() {
-    // 在build时，应该将组件数据直接注入打包
-    if (components.length === 0) {
+    var pageId = this.$route.params.pageId;
+
+    if (pageId) {
+      // 非首页
+      this.renderSecond(pageId);
+    } else if (components.length === 0) {
+      // 在build时，应该将组件数据直接注入打包
+      // 此处为preview时组件数据的动态替换
       this.components = window.INIT_DATA;
+    }
+  },
+
+
+  methods: {
+    renderSecond: function renderSecond(pageId) {
+      if (!window.MULTI_DATA[pageId]) {
+        alert('页面不存在');
+        return;
+      }
+      var _window$MULTI_DATA$pa = window.MULTI_DATA[pageId],
+          components = _window$MULTI_DATA$pa.components,
+          title = _window$MULTI_DATA$pa.title,
+          bgColor = _window$MULTI_DATA$pa.bgColor;
+
+      this.components = components || [];
+      document.title = title;
+      document.documentElement.style.backgroundColor = bgColor;
     }
   }
 });
@@ -713,7 +745,7 @@ var componentNormalizer = __webpack_require__(3);
 
 var component = Object(componentNormalizer["a" /* default */])(
   views_Indexvue_type_script_lang_js_,
-  Indexvue_type_template_id_e7371660__render,
+  Indexvue_type_template_id_0a1838ce__render,
   staticRenderFns,
   false,
   null,

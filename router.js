@@ -10,8 +10,14 @@ export function createRouter () {
       {
         path: '/',
         name: 'index',
-        component: () => import('./src/views/Index.vue')
-        // component: require('./src/views/Index.vue')
+        component: () => import('./src/views/Index.vue'),
+        children: [
+          {
+            path: ':pageId',
+            name: 'index-child',
+            component: () => import('./src/views/Index.vue')
+          }
+        ]
       }
     ]
   })

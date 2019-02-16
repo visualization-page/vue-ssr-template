@@ -9,11 +9,22 @@ const serverBundle = require(`${targetDir}/vue-ssr-server-bundle.json`)
 const clientManifest = require(`${targetDir}/vue-ssr-client-manifest.json`)
 const template = fs.readFileSync('./index.template.html', 'utf-8')
 const componentsConfig = require('./site-config')
+
+// 默认首页配置
+// 走ssr渲染
 const componentsScript = `<script type="text/javascript">
   // global-data-start  
   window.INIT_DATA = ${JSON.stringify(componentsConfig.components)}
   // global-data-end
-</script>`
+  </script>`
+
+// 其他页面配置
+// 通过watch切换
+const multiPageConfig = `<script type="text/javascript">
+  // multi-data-start  
+  window.MULTI_DATA = ${JSON.stringify(componentsConfig.multiData)}
+  // multi-data-end
+  </script>`
 const htmlTargetPath = path.resolve(__dirname, targetDir, 'index.html')
 
 const context = {
@@ -21,8 +32,11 @@ const context = {
   bgColor: componentsConfig.bgColor,
   meta: `<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">`,
   url: '/',
-  renderComponents() {
+  renderComponents () {
     return isPreview ? componentsScript : ''
+  },
+  renderMultiData () {
+    return multiPageConfig
   }
 }
 
