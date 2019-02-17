@@ -14,12 +14,19 @@ const componentsConfig = require('./site-config')
 // 走ssr渲染
 const componentsScript = `<script type="text/javascript">
   // global-data-start  
-  window.INIT_DATA = ${JSON.stringify(componentsConfig.components)}
+  window.INIT_DATA = ${JSON.stringify(componentsConfig.components.map(x => {
+    return { ...x, schema: null }
+  }))}
   // global-data-end
   </script>`
 
 // 其他页面配置
 // 通过watch切换
+Object.keys(componentsConfig.multiData).forEach(id => {
+  componentsConfig.multiData[id].components = componentsConfig.multiData[id].components.map(x => {
+    return { ...x, schema: null }
+  })
+})
 const multiPageConfig = `<script type="text/javascript">
   // multi-data-start  
   window.MULTI_DATA = ${JSON.stringify(componentsConfig.multiData)}
