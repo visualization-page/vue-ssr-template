@@ -47,7 +47,7 @@ exports.push([module.i, ".ybutton{font-size:14px;cursor:pointer;color:#666}.ybut
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/button/index.vue?vue&type=template&id=1d95ddf6&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.5.1@vue-loader/lib/loaders/templateLoader.js?{"compilerOptions":{"preserveWhitespace":false}}!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/button/index.vue?vue&type=template&id=6c2fd203&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ybutton",class:{
     'ybutton-type__inline': _vm.subType === 1,
     'ybutton-type__block': _vm.subType === 2,
@@ -69,7 +69,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/button/index.vue?vue&type=template&id=1d95ddf6&
+// CONCATENATED MODULE: ./src/components/button/index.vue?vue&type=template&id=6c2fd203&
 
 // CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.4@babel-loader/lib!./node_modules/_vue-loader@15.5.1@vue-loader/lib?{"compilerOptions":{"preserveWhitespace":false}}!./src/components/button/index.vue?vue&type=script&lang=js&
 //
@@ -150,11 +150,14 @@ var staticRenderFns = []
       var click = this.click.split('_');
       // type: link; tel
       var isTel = click[0] === 'tel';
+      var isInnerPage = click[0] === 'inner';
       var val = click[1];
       if (click.length > 2) {
         val = click.slice(1, click.length).join('_');
       }
-      if (isTel) {
+      if (isInnerPage) {
+        this.$router.push(val);
+      } else if (isTel) {
         location.href = 'tel://' + val;
       } else if (/^http/.test(val)) {
         window.open(val);
